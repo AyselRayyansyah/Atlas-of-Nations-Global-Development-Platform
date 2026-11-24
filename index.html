@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Atlas of Nations: e-book interaktif tentang pembangunan negara, sumber daya alam, sumber daya manusia, ekonomi, energi, dan infrastruktur.">
+<title>Atlas of Nations — Global Development Platform Platform</title>
+<link rel="preconnect" href="https://unpkg.com"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+ <a class="brand" href="#"><span class="brand-mark">A</span><span>ATLAS <small>OF NATIONS</small></span></a>
+ <nav><a href="#reader" data-i18n="navBook">Buku</a><a href="#explore" data-i18n="navMap">Peta Dunia</a><a href="#method" data-i18n="navMethod">Metodologi</a></nav>
+ <div class="tools"><button id="langBtn" class="smallbtn">EN</button><button id="themeBtn" class="smallbtn" aria-label="Toggle theme">◐</button></div>
+</header>
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow" data-i18n="eyebrow">GLOBAL DEVELOPMENT • INTERACTIVE READER</div>
+ <h1 data-i18n="heroTitle">Memahami kemajuan<br><em>melalui 50 negara.</em></h1>
+ <p data-i18n="heroText">Sebuah atlas pembelajaran tentang bagaimana sumber daya alam, kualitas manusia, institusi, teknologi, dan geografi membentuk lintasan pembangunan suatu bangsa.</p>
+ <div class="hero-actions"><a class="primary" href="#explore" data-i18n="exploreBtn">Jelajahi peta →</a><a class="secondary" href="#reader" data-i18n="readBtn">Mulai membaca</a></div>
+ <div class="hero-meta"><span>50 <small>COUNTRY PROFILES</small></span><span>06 <small>WORLD REGIONS</small></span><span>ID / EN <small>BILINGUAL</small></span></div></div>
+ <div class="hero-art"><div class="orb"></div><div class="orbit o1"></div><div class="orbit o2"></div><div class="art-label">KNOWLEDGE<br>× RESOURCES<br>× INSTITUTIONS</div><div class="art-coord">0°00′ N<br>0°00′ E</div></div>
+</section>
+<main>
+<section id="explore" class="section explore-section">
+ <div class="section-head"><div><div class="eyebrow">01 / WORLD EXPLORER</div><h2 data-i18n="mapTitle">Peta pembangunan dunia</h2><p data-i18n="mapText">Pilih negara pada peta atau gunakan daftar untuk membuka profil dan analisisnya.</p></div><div class="stat-pill"><b id="countryCount">50</b><span data-i18n="profileCount">profil negara</span></div></div>
+ <div class="explorer-grid"><div class="map-wrap"><div id="map"></div><div class="map-legend"><span><i class="dot active"></i><span data-i18n="hasProfile">Profil tersedia</span></span><span><i class="dot inactive"></i><span data-i18n="noProfile">Belum diprofilkan</span></span></div></div>
+ <aside class="country-panel"><div class="panel-top"><span class="eyebrow">COUNTRY INDEX</span><span id="visibleCount">50 entries</span></div><input id="search" type="search" placeholder="Cari negara / Search country…" aria-label="Search countries"><div class="filter-row"><select id="regionFilter"><option value="all">Semua kawasan / All regions</option></select><select id="sortFilter"><option value="az">A–Z</option><option value="hdi">HDI tertinggi</option></select></div><div id="countryList" class="country-list"></div></aside></div>
+ <article id="profile" class="profile-card"><div class="profile-empty"><span class="eyebrow">COUNTRY PROFILE</span><h3 data-i18n="selectCountry">Pilih sebuah negara untuk memulai.</h3><p data-i18n="selectText">Profil akan menampilkan indikator pembangunan dan pembacaan kritis atas kekuatan serta tantangannya.</p></div></article>
+</section>
+<section id="reader" class="section reader-section">
+ <div class="section-head"><div><div class="eyebrow">02 / THE READER</div><h2 data-i18n="bookTitle">Membaca sebuah bangsa</h2><p data-i18n="bookText">Lima bab ringkas untuk memahami hubungan antara modal alam, manusia, dan kemajuan.</p></div><div class="reader-controls"><button id="fontDown">A−</button><button id="fontUp">A+</button></div></div>
+ <div class="reader-layout"><aside class="chapter-nav"><div class="eyebrow">CONTENTS</div><div id="chapterNav"></div><div class="progress"><div class="progress-label"><span data-i18n="readingProgress">Kemajuan membaca</span><b id="progressText">0%</b></div><div class="progress-track"><i id="progressBar"></i></div></div></aside><article id="chapterContent" class="chapter-content"></article></div>
+</section>
+<section id="method" class="section method-section"><div class="eyebrow">03 / RESEARCH NOTES</div><h2 data-i18n="methodTitle">Membaca data dengan cermat.</h2><div class="method-grid">
+ <div><h3 data-i18n="methodOne">Indikator bukan keseluruhan cerita.</h3><p data-i18n="methodOneText">HDI merangkum kesehatan, pendidikan, dan standar hidup. Ia berguna untuk perbandingan, tetapi tidak menggambarkan seluruh ketimpangan, kualitas institusi, atau kondisi ekologis.</p></div>
+ <div><h3 data-i18n="methodTwo">Tahun data harus diperhatikan.</h3><p data-i18n="methodTwoText">Nilai HDI pada profil merujuk tahun 2023 dalam Human Development Report 2025. Populasi adalah perkiraan 2024 yang dibulatkan. Deskripsi ekonomi dan energi bersifat ringkasan kontekstual, bukan statistik real-time.</p></div>
+ <div><h3 data-i18n="methodThree">Bandingkan secara kontekstual.</h3><p data-i18n="methodThreeText">Negara dengan SDA melimpah tidak otomatis lebih maju. Hasil pembangunan dipengaruhi pendidikan, teknologi, institusi, infrastruktur, sejarah, dan distribusi manfaat.</p></div>
+ </div><div class="source-list"><b>SUMBER UTAMA</b><a href="https://hdr.undp.org/data-center/country-insights" target="_blank" rel="noreferrer">UNDP Human Development Data Center ↗</a><a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_Tables_1-7.pdf" target="_blank" rel="noreferrer">UNDP HDR 2025 — Statistical Annex ↗</a><a href="https://data.worldbank.org/" target="_blank" rel="noreferrer">World Bank — World Development Indicators ↗</a><a href="https://www.iea.org/" target="_blank" rel="noreferrer">International Energy Agency ↗</a></div>
+</section>
+</main>
+<footer><span>ATLAS OF NATIONS</span><span>A GLOBAL DEVELOPMENT LEARNING PLATFORM · 2026</span></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="countries.js"></script><script src="app.js"></script>
+</body></html>
